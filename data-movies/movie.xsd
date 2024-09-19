@@ -3,27 +3,27 @@
 	<xsd:element name="movie">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="director">
+				<xsd:element name="director" minOccurs="0">
 					<xsd:complexType>
-						<xsd:attribute name="name" type="xsd:string" />
+						<xsd:attribute name="name" type="xsd:string" use="required" />
 					</xsd:complexType>
 				</xsd:element>
-				<xsd:element name="actors">
+				<xsd:element name="actors" minOccurs="0">
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="actor" maxOccurs="unbounded">
 								<xsd:complexType>
-									<xsd:attribute name="name" type="xsd:string" />
+									<xsd:attribute name="name" type="xsd:string" use="required" />
 									<xsd:attribute name="role" type="xsd:string" />
 								</xsd:complexType>
 							</xsd:element>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				<xsd:element name="synopsis" type="xsd:string" />
+				<xsd:element name="synopsis" type="xsd:string" minOccurs="0" />
 			</xsd:sequence>
-			<xsd:attribute name="title" type="xsd:string" />
-			<xsd:attribute name="year" type="xsd:int" />
+			<xsd:attribute name="title" type="xsd:string" use="required" />
+			<xsd:attribute name="year" type="xsd:int" use="required" />
 		</xsd:complexType>
 	</xsd:element>
 

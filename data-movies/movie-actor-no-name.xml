@@ -1,0 +1,13 @@
+<movie title="Dune: Part Two" year="2024">
+	<director name="Denis Villeneuve" />
+	<actors>
+		<actor name="Timothée Chalamet" />
+		<actor role="Chani" />
+	</actors>
+	<synopsis>Paul rejoint les Fremen et cherche
+	à se venger des conspirateurs qui ont détruit sa famille, 
+	faisant un choix entre l'amour et le sort de l'univers 
+	connu alors qu'il s'efforce d'empêcher un avenir terrible 
+	que lui seul peut prédire.
+	</synopsis>
+</movie>
