@@ -1,0 +1,30 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="movie">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="director">
+					<xsd:complexType>
+						<xsd:attribute name="name" type="xsd:string" />
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="actors">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="actor" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:attribute name="name" type="xsd:string" />
+									<xsd:attribute name="role" type="xsd:string" />
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="synopsis" type="xsd:string" />
+			</xsd:sequence>
+			<xsd:attribute name="title" type="xsd:string" />
+			<xsd:attribute name="year" type="xsd:int" />
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
