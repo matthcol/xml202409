@@ -1,0 +1,38 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- 
+		representation of a cinema movie with its director and actors
+		
+		author: Matthias Colin
+		version: 1.0
+	-->
+	
+	<xsd:complexType name="tActor">
+		<xsd:attribute name="name" type="xsd:string" use="required" />
+		<xsd:attribute name="role" type="xsd:string" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="tDirector">
+		<xsd:attribute name="name" type="xsd:string" use="required" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="tActors">
+		<xsd:sequence>
+			<xsd:element name="actor" type="tActor" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="tMovie">
+		<xsd:sequence>
+			<xsd:element name="director" type="tDirector" minOccurs="0" />
+			<xsd:element name="actors" type="tActors" minOccurs="0" />
+			<xsd:element name="synopsis" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+		<xsd:attribute name="title" type="xsd:string" use="required" />
+		<xsd:attribute name="year" type="xsd:int" use="required" />
+	</xsd:complexType>
+
+	<xsd:element name="movie" type="tMovie" />
+		
+
+</xsd:schema>
