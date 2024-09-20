@@ -7,6 +7,12 @@
 		version: 1.0
 	-->
 	
+	<xsd:simpleType name="tMovieYear">
+		<xsd:restriction base="xsd:int">
+			<xsd:minExclusive value="1887" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
 	<xsd:complexType name="tActor">
 		<xsd:attribute name="name" type="xsd:string" use="required" />
 		<xsd:attribute name="role" type="xsd:string" />
@@ -29,7 +35,7 @@
 			<xsd:element name="synopsis" type="xsd:string" minOccurs="0" />
 		</xsd:sequence>
 		<xsd:attribute name="title" type="xsd:string" use="required" />
-		<xsd:attribute name="year" type="xsd:int" use="required" />
+		<xsd:attribute name="year" type="tMovieYear" use="required" />
 	</xsd:complexType>
 
 	<xsd:element name="movie" type="tMovie" />
